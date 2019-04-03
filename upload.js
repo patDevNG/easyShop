@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router();
 const formidable = require('formidable');
 
-
 router.post('/upload', (req, res) => {
     const form = new formidable.IncomingForm();
 
@@ -17,7 +16,6 @@ router.post('/upload', (req, res) => {
         console.log('Uploaded ' + file.name);
         res.send({image: `${file.path}`});
     });
-    
 
 });
 

@@ -50,10 +50,7 @@ module.exports = {
     });
 
     addUser = (userData) => {
-      let user = new User(
-        userData,
-        (userData.password = User.hashPassword(userData.password))
-      );
+      let user = new User( userData,(userData.password = User.hashPassword(userData.password)));
       user.save((err, registeredUser) => {
         if (err) {
           console.log(err);
@@ -74,7 +71,7 @@ module.exports = {
     if(err)
     console.log(err)
     else
-    res.send(users)
+    res.status(200).json(users);
   })
       },
   
